@@ -1,0 +1,19 @@
+spring:
+    application.name: beer-api-producer
+    cloud.stream.bindings.output:
+        content-type: application/json
+        # remove::start[]
+        destination: verifications
+        # remove::end[]
+server.port: ${PORT:8080}
+
+# Embedded H2 
+# Link - http://localhost:8083/h2-console
+# JDBC URL:jdbc:h2:mem:testdb
+# username: sa
+# spring.h2.console.enabled=true
+# spring.h2.console.path=/h2-console
+
+logging:
+  level:
+    org.springframework.cloud: debug

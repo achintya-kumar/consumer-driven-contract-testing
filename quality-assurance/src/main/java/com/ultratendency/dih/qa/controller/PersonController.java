@@ -37,8 +37,14 @@ public class PersonController {
 	
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
-	public List<Person> getByPassportNumber() {
+	public List<Person> getAll() {
 		return personRepository.findAll();
+	}
+	
+	@GetMapping("/count")
+	@ResponseStatus(HttpStatus.OK)
+	public Integer getCount() {
+		return personRepository.findAll().size();
 	}
 	
 }
