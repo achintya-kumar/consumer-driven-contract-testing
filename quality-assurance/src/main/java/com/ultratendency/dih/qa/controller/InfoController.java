@@ -12,10 +12,16 @@ import lombok.NoArgsConstructor;
 
 @RestController
 public class InfoController {
+//	@GetMapping("/status")
+//	@ResponseStatus(HttpStatus.OK)
+//	public @ResponseBody Response getStatus() {
+//		return new Response("OK");
+//	}
+	
 	@GetMapping("/status")
 	@ResponseStatus(HttpStatus.OK)
-	public @ResponseBody Response getStatus() {
-		return new Response("OK");
+	public String getStatus() {
+		return "{\"status\": \"OK\"}";
 	}
 }
 

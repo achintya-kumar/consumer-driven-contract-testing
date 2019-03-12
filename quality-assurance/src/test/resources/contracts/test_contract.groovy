@@ -5,13 +5,13 @@ import org.springframework.cloud.contract.spec.Contract
 Contract.make {
 	request {
 		method 'GET'
-		url '/status'
+		url '/persons/count'
 	}
 	response {
 		status 200
 		body( """
 			{
-				"status": "OK"
+				"count": 2
 			}
 		""")
 	}

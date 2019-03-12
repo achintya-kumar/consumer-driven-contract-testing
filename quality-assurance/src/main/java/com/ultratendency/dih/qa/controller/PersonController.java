@@ -43,8 +43,8 @@ public class PersonController {
 	
 	@GetMapping("/count")
 	@ResponseStatus(HttpStatus.OK)
-	public Integer getCount() {
-		return personRepository.findAll().size();
+	public String getCount() {
+		return "{\"count\":" + personRepository.findAll().size() + "}";
 	}
 	
 }
